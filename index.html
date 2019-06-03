@@ -61,6 +61,7 @@ span.psw {
 		var x = document.getElementById("login12").value;
 		if(players.length != 2)
 		{
+			alert("Podaj reszte graczy, liczba graczy = " + (players.length + 1));
 			console.log(x);
 			players.push(x);
 			var input = document.getElementById("login12");
@@ -69,6 +70,7 @@ span.psw {
 		}
 		else
 		{
+			alert("Witamy w grze");
 			sessionStorage.setItem("storageName", players);
 			window.open("game.html");
 		}
