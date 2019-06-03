@@ -126,6 +126,7 @@
 ];
     setUp();
     var password;
+    var cell;
   function setUp()
   {
       var categoryId = Math.floor(Math.random()*3+0);
@@ -140,13 +141,28 @@
       var size = pssword.length;
   
       var i;
-      var cell = new Array(size);
+      cell = new Array(size);
       
       for (i = 0; i < size; i++) { 
         cell[i] = row.insertCell(i);
       }
     }
-  
+    function update(){
+      var clickCharacter;
+      for (i = 0; i < size; i++) {
+        if(clickCharacter == passwordArray[i]){
+          cell[i].innerText = passwordArray[i];
+          playersScore[currentPlayer] += 1;
+        }
+      }
+    }
+    function nextPlayerTur(){
+      if(currentPlayer > 3){
+        currentPlayer = 0
+      }
+      else 
+        currentPlayer++;
+    }
 		////
 		var alphabet = ("abcdefghijklmnopqrstuvwxyz").toUpperCase();
 		
@@ -164,11 +180,12 @@
     }
     //        $('#button').addClass("button-vowel");
 
-    $(".button-consolant").click(function () {
+    $(".button-vowel").click(function () {
         var i;
         for (i = 0; i < password.length; i++)  {
             if (this.innerText === password[i].toUpperCase()) {
-            console.log("HAHAH");
+              cell[i].innerText = password[i];
+            //console.log("HAHAH");
         }
     }
   });
@@ -177,6 +194,7 @@
         var i;
         for (i = 0; i < password.length; i++) {
             if (this.innerText === password[i].toUpperCase()) {
+              cell[i].innerText = password[i];
                 console.log("HAHAH");
             }
         }
