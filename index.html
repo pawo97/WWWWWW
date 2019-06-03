@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolo fortuny</title>
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 50px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+.imgcontainer {
+	text-align: center;
+	margin: 70px 0 5px 0;
+}
+
+img.avatar {
+	width: 30%;
+	border-radius: 75%;
+}
+
+.container {
+	padding: 16px;
+	margin: 20px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+
+</style>
+<script type = "text/javascript">
+	var players = [];
+	function openNewPage()
+	{
+		var x = document.getElementById("login12").value;
+		if(players.length != 2)
+		{
+			console.log(x);
+			players.push(x);
+			var input = document.getElementById("login12");
+			input.value == ""
+			
+		}
+		else
+		{
+			sessionStorage.setItem("storageName", players);
+			window.open("game.html");
+		}
+	}
+
+
+</script>   
+</head>
+<body style="background-image: url('background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+  <div class="imgcontainer">
+    <img src="logo.jpg" alt="avatar" class="avatar">
+  </div>
+
+  <div class="container">
+        <form><input type="text" id="login12" class="fadeIn second" name="login" placeholder="login" required></form>
+        
+    <button onclick="openNewPage();" type="submit">START</button>
+  </div>
+
+
+</body>
+</html>
